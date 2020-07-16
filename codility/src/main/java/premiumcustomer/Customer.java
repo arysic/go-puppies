@@ -15,4 +15,8 @@ public class Customer {
     private String firstName;
     private String lastName;
     private Status status; // Status.FRAUD, Status.NORMAL, Status.PREMIUM
+
+    public void updateToPremiumStatus() {
+        status = Status.PREMIUM;
+    }
 }

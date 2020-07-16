@@ -9,9 +9,13 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     public void updateCustomerToPremiumStatus(Customer customer) {
-        if (!customer.getStatus().equals(Status.FRAUD)) {
-            customer.setStatus(Status.PREMIUM);
+        if (!isFraud(customer)) {
+            customer.updateToPremiumStatus();
             customerRepository.save(customer);
         }
+    }
+
+    private boolean isFraud(Customer customer) {
+        return customer.getStatus().equals(Status.FRAUD);
     }
 }

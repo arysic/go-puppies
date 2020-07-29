@@ -2,91 +2,112 @@ package binarygap;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import utils.TestDataRepository;
-import utils.integer.IntegerResultTestEntity;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class BinaryGapTest {
-    private BinaryGap                       binaryGap = new BinaryGap();
-    private static final String             fileName = "resources/BinaryGapTestData.json";
-    private static final ClassLoader        classLoader = TestDataRepository.class.getClassLoader();
-    private File                            file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
-    private List<IntegerResultTestEntity>   binaryGapTestData = new ArrayList<>();
+    private BinaryGap binaryGap = new BinaryGap();
 
-    @BeforeAll
-    public void getBinaryGapTestData() {
-
+    @Test
+    public void getSolutionExample1() {
+        Assertions.assertEquals(5, binaryGap.solution(1041));
     }
 
     @Test
-    public void getBinaryGapTested() {
-
-        Assertions.assertEquals(binaryGap.solution(1041), 5);
+    public void getSolutionExample2() {
+        Assertions.assertEquals(0, binaryGap.solution(15));
     }
 
-    void getSolutionExample2() {
-        Assertions.assertEquals(binaryGap.solution(15), 0);
+    @Test
+    public void getSolutionExample3() {
+        Assertions.assertEquals(0, binaryGap.solution(32));
     }
-    void getSolutionExample3() {
-        Assertions.assertEquals(binaryGap.solution(32), 0);
+
+    @Test
+    public void getSolutionExtreme1() {
+        Assertions.assertEquals(0, binaryGap.solution(1));
     }
-    void getSolutionExtreme1() {
-        Assertions.assertEquals(binaryGap.solution(1), 0);
+
+    @Test
+    public void getSolutionExtreme2() {
+        Assertions.assertEquals(1, binaryGap.solution(5));
     }
-    void getSolutionExtreme2() {
-        Assertions.assertEquals(binaryGap.solution(5), 1);
+
+    @Test
+    public void getSolutionExtreme3() {
+        Assertions.assertEquals(0, binaryGap.solution(2147483647));
     }
-    void getSolutionExtreme3() {
-        Assertions.assertEquals(binaryGap.solution(2147483647), 5);
+
+    @Test
+    public void getSolutionTrailingZeros1() {
+        Assertions.assertEquals(0, binaryGap.solution(6));
     }
-    void getSolutionTrailingZeros1() {
-        Assertions.assertEquals(binaryGap.solution(6), 0);
+
+    @Test
+    public void getSolutionTrailingZeros2() {
+        Assertions.assertEquals(2, binaryGap.solution(328));
     }
-    void getSolutionTrailingZeros2() {
-        Assertions.assertEquals(binaryGap.solution(328), 2);
+
+    @Test
+    public void getSolutionPowerOfTwo1() {
+        Assertions.assertEquals(0, binaryGap.solution(16));
     }
-    void getSolutionPowerOfTwo1() {
-        Assertions.assertEquals(binaryGap.solution(16), 1);
+
+    @Test
+    public void getSolutionPowerOfTwo2() {
+        Assertions.assertEquals(0, binaryGap.solution(1024));
     }
-    void getSolutionPowerOfTwo2() {
-        Assertions.assertEquals(binaryGap.solution(1024), 6);
+
+    @Test
+    public void getSolutionSimple1() {
+        Assertions.assertEquals(2, binaryGap.solution(9));
     }
-    void getSolutionSimple1() {
-        Assertions.assertEquals(binaryGap.solution(9), 2);
+
+    @Test
+    public void getSolutionSimple2() {
+        Assertions.assertEquals(1, binaryGap.solution(11));
     }
-    void getSolutionSimple2() {
-        Assertions.assertEquals(binaryGap.solution(11), 1);
+
+    @Test
+    public void getSolutionSimple3() {
+        Assertions.assertEquals(3, binaryGap.solution(1162));
     }
-    void getSolutionSimple3() {
-        Assertions.assertEquals(binaryGap.solution(1162), 3);
+
+    @Test
+    public void getSolutionMedium1() {
+        Assertions.assertEquals(2, binaryGap.solution(51712));
     }
-    void getSolutionMedium1() {
-        Assertions.assertEquals(binaryGap.solution(51712), 2);
+
+    @Test
+    public void getSolutionMedium2() {
+        Assertions.assertEquals(3, binaryGap.solution(561892));
     }
-    void getSolutionMedium2() {
-        Assertions.assertEquals(binaryGap.solution(561892), 3);
+
+    @Test
+    public void getSolutionMedium3() {
+        Assertions.assertEquals(9, binaryGap.solution(66561));
     }
-    void getSolutionMedium3() {
-        Assertions.assertEquals(binaryGap.solution(66561), 9);
+
+    @Test
+    public void getSolutionLarge1() {
+        Assertions.assertEquals(20, binaryGap.solution(6291457));
     }
-    void getSolutionLarge1() {
-        Assertions.assertEquals(binaryGap.solution(6291457), 20);
+
+    @Test
+    public void getSolutionLarge2() {
+        Assertions.assertEquals(4, binaryGap.solution(74901729));
     }
-    void getSolutionLarge2() {
-        Assertions.assertEquals(binaryGap.solution(74901729), 4);
+
+    @Test
+    public void getSolutionLarge3() {
+        Assertions.assertEquals(25, binaryGap.solution(805306373));
     }
-    void getSolutionLarge3() {
-        Assertions.assertEquals(binaryGap.solution(805306373), 25);
+
+    @Test
+    public void getSolutionLarge4() {
+        Assertions.assertEquals(29, binaryGap.solution(1073741825));
     }
-    void getSolutionLarge4() {
-        Assertions.assertEquals(binaryGap.solution(1073741825), 29);
-    }
-    void getSolutionLarge5() {
-        Assertions.assertEquals(binaryGap.solution(1610612737), 28);
+
+    @Test
+    public void getSolutionLarge5() {
+        Assertions.assertEquals(28, binaryGap.solution(1610612737));
     }
 }

@@ -8,7 +8,7 @@ public class ArrayOddElement {
         return getOddElement(A);
     }
 
-    public int getOddElement(int[] A) {
+    private int getOddElement(int[] A) {
         HashSet<Integer> a = new HashSet<>();
         for (int i=0; i < A.length; i++) {
             if (a.contains(A[i])) {
